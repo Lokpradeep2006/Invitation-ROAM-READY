@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.invitation-card {
+    width: 90%;
+    max-width: 1000px;
+    background: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.header {
+    padding: 30px;
+    background: #444;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #f39c12;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.header span {
+    color: #3498db;
+}
+
+.banner {
+    padding: 20px;
+    background: #555;
+    font-weight: bold;
+}
+
+.banner h2 {
+    font-size: 2em;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.details {
+    padding: 20px;
+    background: #222;
+}
+
+.details h2 {
+    font-size: 1.8em;
+    color: #f39c12;
+}
+
+.contact-info {
+    padding: 20px;
+    background: #333;
+}
+
+.contact-info h3, .contact-info h4 {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+.footer {
+    padding: 20px;
+    background: #111;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    background: #f39c12;
+    border: none;
+    border-radius: 5px;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #3498db;
+}
