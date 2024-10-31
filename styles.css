@@ -6,6 +6,7 @@ body {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: #333;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    background-attachment: fixed; /* Fixed background for scrolling effect */
 }
 
 .invitation-card {
@@ -33,12 +34,6 @@ body {
     text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
 }
 
-.slogan {
-    font-style: italic;
-    color: #ff6f61;
-    font-size: 1.2em;
-}
-
 /* Banner styles */
 .banner {
     background: rgba(255, 255, 255, 0.8);
@@ -64,8 +59,8 @@ body {
 }
 
 .highlight ul {
-    list-style-type: square;
-    padding-left: 20px;
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0;
 }
 
 /* Details section */
@@ -118,21 +113,15 @@ body {
     margin: 15px 0;
 }
 
-/* QR code styles */
+/* QR Code styles */
 .qr-code-container {
     text-align: center;
-    margin-top: 15px;
+    margin: 15px 0;
 }
 
 .qr-code {
-    width: 150px; /* Fixed width for QR code */
-    height: auto;
-}
-
-.qr-text {
-    font-size: 1.1em;
-    margin-top: 5px;
-    color: #555;
+    width: 150px; /* Restrict QR code size */
+    height: 150px; /* Restrict QR code size */
 }
 
 /* Footer styles */
@@ -155,7 +144,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
-    margin: 10px; /* Add spacing between buttons */
 }
 
 .cta-button:hover {
@@ -165,38 +153,49 @@ body {
 /* Animation */
 @keyframes glow {
     0% {
-        text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+        text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
     }
     100% {
-        text-shadow: 0 0 20px #ff6f61, 0 0 40px #ff6f61, 0 0 60px #ff6f61;
+        text-shadow: 0 0 30px #ff6f61, 0 0 40px #ff6f61, 0 0 50px #ff6f61;
     }
 }
 
-/* Media Queries */
+/* Responsive Design */
 @media (max-width: 768px) {
     .gallery-item {
-        flex: 1 1 calc(50% - 10px);
+        flex: 1 1 calc(50% - 10px); /* Two items per row on smaller screens */
     }
 
     .header h1 {
-        font-size: 2em;
+        font-size: 2em; /* Smaller header on mobile */
     }
 
-    .footer p {
-        font-size: 0.9em;
+    .banner h2 {
+        font-size: 1.5em; /* Smaller banner text on mobile */
+    }
+
+    .highlight h2,
+    .details h2 {
+        font-size: 1.5em; /* Smaller section headers on mobile */
+    }
+
+    .cta-button {
+        font-size: 1em; /* Smaller button text on mobile */
     }
 }
 
 @media (max-width: 480px) {
     .gallery-item {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* Full width for items on mobile */
     }
 
     .header h1 {
-        font-size: 1.8em;
+        font-size: 1.5em; /* Even smaller header for very small screens */
     }
 
-    .footer p {
-        font-size: 0.8em;
+    .banner h2,
+    .highlight h2,
+    .details h2 {
+        font-size: 1.2em; /* Further reduce header sizes */
     }
 }
