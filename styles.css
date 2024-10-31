@@ -6,13 +6,20 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #e0f7fa; /* Light tropical blue background */
-    color: #263238; /* Dark slate for easy readability */
+    background: linear-gradient(135deg, #e0f7fa, #ffb74d); /* Tropical gradient */
+    color: #263238;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect on load */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .invitation-card {
@@ -21,26 +28,42 @@ body {
     background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     text-align: center;
     color: #37474f;
+    transform: translateY(20px);
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .header {
     padding: 40px 20px;
-    background: #00796b; /* Deep tropical green */
+    background: linear-gradient(135deg, #00796b, #004d40); /* Deep green gradient */
+    color: #ffb74d;
+    position: relative;
 }
 
 .header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8em;
-    color: #ffb74d; /* Warm yellow */
     font-weight: bold;
+    color: #ffb74d;
     margin-bottom: 5px;
+    opacity: 0;
+    animation: headerFade 1s 0.5s forwards;
+}
+
+@keyframes headerFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .header span {
-    color: #ffd54f; /* Sunset yellow for accent */
+    color: #ffd54f;
 }
 
 .header p {
@@ -51,9 +74,11 @@ body {
 
 .banner {
     padding: 20px;
-    background: #4db6ac; /* Sea green */
+    background: #4db6ac;
     color: #ffffff;
     font-weight: 500;
+    position: relative;
+    overflow: hidden;
 }
 
 .banner h2 {
@@ -64,6 +89,12 @@ body {
 
 .banner p {
     font-size: 1.1em;
+    animation: textGlow 1.5s infinite alternate;
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px rgba(255,255,255,0.7); }
+    to { text-shadow: 0 0 20px rgba(255,255,255,1); }
 }
 
 .gallery {
@@ -77,7 +108,21 @@ body {
 .gallery-item {
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    animation: galleryFade 1s 0.5s forwards;
+}
+
+@keyframes galleryFade {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .gallery-item img {
@@ -87,42 +132,45 @@ body {
     transition: transform 0.3s ease;
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 .details {
     padding: 30px 20px;
     background: #ffffff;
     font-size: 1.1em;
+    transform: translateY(20px);
+    animation: slideIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
 }
 
 .details h2 {
     font-size: 1.8em;
-    color: #00796b; /* Deep green for headings */
+    color: #00796b;
     margin-bottom: 15px;
+    animation: popUp 0.5s ease forwards;
+}
+
+@keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .details p {
-    color: #546e7a; /* Subtle gray for paragraph text */
+    color: #546e7a;
     line-height: 1.6;
     margin-bottom: 10px;
 }
 
 .contact-info {
     padding: 20px;
-    background: #ffb74d; /* Warm, inviting yellow */
+    background: #ffb74d;
+    color: #37474f;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 .contact-info h3, .contact-info h4 {
     color: #263238;
     margin-bottom: 10px;
-}
-
-.contact-info p {
-    font-size: 1em;
-    color: #37474f;
 }
 
 .location {
@@ -138,6 +186,12 @@ body {
     height: 100px;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
 }
 
 .footer {
@@ -145,11 +199,18 @@ body {
     background: #00796b;
     color: #ffffff;
     font-size: 1.1em;
+    animation: footerSlide 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes footerSlide {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .cta-button {
     padding: 12px 25px;
-    background: #ff7043; /* Coral for the call-to-action */
+    background: #ff7043;
     border: none;
     border-radius: 5px;
     color: #ffffff;
@@ -157,9 +218,16 @@ body {
     cursor: pointer;
     font-size: 1em;
     margin-top: 10px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: buttonPop 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes buttonPop {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
 }
 
 .cta-button:hover {
-    background: #d84315; /* Darker coral for hover */
+    background: #d84315;
+    transform: scale(1.1);
 }
