@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
-    color: #fff;
+    background: linear-gradient(135deg, #E3E3E3, #C4C4C4);
+    color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,39 +17,40 @@ body {
 .invitation-card {
     width: 90%;
     max-width: 1000px;
-    background: #333;
+    background: #FFF;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #f1f1f1;
+    color: #333;
 }
 
 .header {
     padding: 30px;
-    background: #444;
+    background: #FFB703;
 }
 
 .header h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 2.5em;
-    color: #f39c12;
+    color: #023047;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .header span {
-    color: #3498db;
+    color: #FB8500;
 }
 
 .banner {
     padding: 20px;
-    background: #555;
+    background: #8ECAE6;
     font-weight: bold;
 }
 
 .banner h2 {
     font-size: 2em;
-    color: #f39c12;
+    color: #023047;
     margin-bottom: 10px;
 }
 
@@ -58,6 +59,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     padding: 15px;
+    background: #E3E3E3;
 }
 
 .gallery-item {
@@ -78,21 +80,21 @@ body {
 
 .details {
     padding: 20px;
-    background: #222;
+    background: #FFF;
 }
 
 .details h2 {
     font-size: 1.8em;
-    color: #f39c12;
+    color: #023047;
 }
 
 .contact-info {
     padding: 20px;
-    background: #333;
+    background: #FFB703;
 }
 
 .contact-info h3, .contact-info h4 {
-    color: #f39c12;
+    color: #023047;
     margin-bottom: 10px;
 }
 
@@ -111,20 +113,20 @@ body {
 
 .footer {
     padding: 20px;
-    background: #111;
+    background: #8ECAE6;
 }
 
 .cta-button {
     padding: 12px 25px;
-    background: #f39c12;
+    background: #FB8500;
     border: none;
     border-radius: 5px;
-    color: #222;
+    color: #FFF;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
 }
 
 .cta-button:hover {
-    background: #3498db;
+    background: #FFB703;
 }
