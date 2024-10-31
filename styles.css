@@ -3,10 +3,14 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
     color: #333;
     overflow-x: hidden; /* Prevent horizontal scroll */
-    background-attachment: fixed; /* Fixed background for scrolling effect */
+}
+
+img {
+    object-fit: cover;
+    height: max-content;
 }
 
 .invitation-card {
@@ -51,6 +55,10 @@ body {
 /* Highlight section */
 .highlight {
     margin: 20px 0;
+    background: rgba(255, 228, 196, 0.6); /* Light color background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .highlight h2 {
@@ -59,13 +67,17 @@ body {
 }
 
 .highlight ul {
-    list-style-type: none; /* Remove default bullet points */
-    padding-left: 0;
+    list-style-type: square;
+    padding-left: 20px;
 }
 
 /* Details section */
 .details {
     margin: 20px 0;
+    background: rgba(240, 248, 255, 0.7); /* Light color background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .details h2 {
@@ -75,29 +87,44 @@ body {
 
 /* Gallery styles */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin: 20px 0;
+    text-align: center; /* Center the gallery heading */
+}
+
+.gallery h2 {
+    font-size: 2em;
+    color: #ff6f61; /* Heading color */
+    margin-bottom: 20px; /* Space between heading and images */
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: center; /* Center the gallery items */
 }
 
 .gallery-item {
-    flex: 1 1 calc(33.333% - 10px);
-    margin: 5px;
+    flex: 1 1 calc(30% - 10px); /* Adjust for three items per row */
+    margin: 5px; /* Space between items */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s;
+    width: 100%; /* Full width of item */
+    height: 100%; /* Ensure it fills the height */
+    object-fit: cover; /* Ensure the image covers the area */
+    transition: transform 0.3s; /* Add transition for hover */
 }
 
-.gallery-item img:hover {
-    transform: scale(1.05);
+.gallery-item:hover {
+    transform: translateY(-5px); /* Raise the item on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
 }
+
+
 
 /* Contact info styles */
 .contact-info {
@@ -113,15 +140,28 @@ body {
     margin: 15px 0;
 }
 
-/* QR Code styles */
+/* QR code styles */
 .qr-code-container {
-    text-align: center;
-    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .qr-code {
-    width: 150px; /* Restrict QR code size */
-    height: 150px; /* Restrict QR code size */
+    width: 100px; /* Reduced size */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s;
+}
+
+.qr-code:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.qr-text {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1em;
 }
 
 /* Footer styles */
@@ -140,62 +180,42 @@ body {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 1.2em;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .cta-button:hover {
-    background: #e65c50;
+    background: #e74c3c;
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-/* Animation */
+/* Animation for glowing text */
 @keyframes glow {
     0% {
-        text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+        text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
     }
     100% {
-        text-shadow: 0 0 30px #ff6f61, 0 0 40px #ff6f61, 0 0 50px #ff6f61;
+        text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .gallery-item {
-        flex: 1 1 calc(50% - 10px); /* Two items per row on smaller screens */
-    }
-
-    .header h1 {
-        font-size: 2em; /* Smaller header on mobile */
-    }
-
-    .banner h2 {
-        font-size: 1.5em; /* Smaller banner text on mobile */
-    }
-
-    .highlight h2,
-    .details h2 {
-        font-size: 1.5em; /* Smaller section headers on mobile */
-    }
-
-    .cta-button {
-        font-size: 1em; /* Smaller button text on mobile */
-    }
+/* Additional styling for elegant sections */
+section {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 480px) {
-    .gallery-item {
-        flex: 1 1 100%; /* Full width for items on mobile */
-    }
+/* Styling for lists */
+ul {
+    padding-left: 20px;
+    list-style: none; /* Remove default list style */
+}
 
-    .header h1 {
-        font-size: 1.5em; /* Even smaller header for very small screens */
-    }
-
-    .banner h2,
-    .highlight h2,
-    .details h2 {
-        font-size: 1.2em; /* Further reduce header sizes */
-    }
+li {
+    margin: 10px 0; /* Add spacing between items */
 }
